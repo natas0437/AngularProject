@@ -1,11 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CountComponent } from './count/count.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ValidationComponent } from './validation/validation.component';
 
 const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent
+  },
+  {
+    path: 'count',
+    component: CountComponent
+  },
+  {
+    path : 'validation',
+    component : ValidationComponent
   }
 ];
 

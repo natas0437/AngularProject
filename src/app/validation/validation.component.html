@@ -1,0 +1,45 @@
+<div class="container">
+    <form class="card p-3 mt-5 mb-5" [formGroup]="formDataDiri">
+      <h3 class="text-center">Formulir Data Diri</h3>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Nama</label>
+      <input [class.is-invalid]="formDataDiri.controls['nama'].invalid && formDataDiri.controls['nama'].touched" formControlName="nama" type="text" placeholder="Masukkan nama lengkap anda" class="form-control" id="exampleFormControlInput1">
+      <div *ngIf="formDataDiri.controls['nama'].hasError('required')"
+       class="invalid-feedback">Nama Anda Mana?</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Umur</label>
+      <input [class.is-invalid]="formDataDiri.controls['umur'].invalid && formDataDiri.controls['umur'].touched" formControlName="umur" type="number" placeholder="Masukkan umur anda" class="form-control" id="exampleFormControlInput1" >
+      <div *ngIf="formDataDiri.controls['umur'].hasError('required')"
+       class="invalid-feedback">Umurmu masukkan woi</div>
+       <div *ngIf="formDataDiri.controls['umur'].hasError('min')"
+       class="invalid-feedback">Minimal 10 woi, masih muda kau</div>
+       <div *ngIf="formDataDiri.controls['umur'].hasError('max')"
+       class="invalid-feedback">Maximal 70, masih idup kau?</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">No. Telp</label>
+      <input [class.is-invalid]="formDataDiri.controls['noTelp'].invalid && formDataDiri.controls['noTelp'].touched" formControlName="noTelp" type="text" placeholder="Masukkan No telepon anda" class="form-control" id="exampleFormControlInput1" >
+      <div *ngIf="formDataDiri.controls['noTelp'].hasError('required')"
+      class="invalid-feedback">08?</div>
+      <div *ngIf="formDataDiri.controls['noTelp'].hasError('minlength')"
+      class="invalid-feedback">Harus 12 angka</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Email address</label>
+      <input [class.is-invalid]="formDataDiri.controls['email'].invalid && formDataDiri.controls['email'].touched" formControlName="email" type="email" placeholder="Masukkan alamat email anda" class="form-control" id="exampleFormControlInput1" >
+      <div *ngIf="formDataDiri.controls['email'].hasError('required')"
+      class="invalid-feedback">Emailmu isi!</div>
+      <div *ngIf="formDataDiri.controls['email'].hasError('email')"
+      class="invalid-feedback">Harus Berbentuk Email</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Alamat</label>
+      <textarea [class.is-invalid]="formDataDiri.controls['alamat'].invalid && formDataDiri.controls['alamat'].touched" formControlName="alamat" class="form-control" placeholder="Masukkan alamat lengkap anda" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <div *ngIf="formDataDiri.controls['alamat'].hasError('required')"
+      class="invalid-feedback">Kau gapunya rumah?</div></div>
+      <div *ngIf="formDataDiri.controls['alamat'].hasError('minlength')"
+      class="invalid-feedback">Pendek Kali Alamatmu</div>
+    <button [disabled]="formDataDiri.invalid" class="btn btn-warning">Tampilkan</button>
+  </form>
+  </div>
