@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="card p-3 mt-5">
+      <h3 class="text-center">
+        List Produsen
+      </h3>
+      <button class="btn btn-sm btn-success w-25 mb-3" [routerLink]="['/','produsen','tambah']">Tambah</button>
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nama</th>
+          <th scope="col">Kode</th>
+          <th scope="col">Alamat</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let produsen of listProdusen; let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{produsen.nama}}</td>
+          <td>{{produsen.kode}}</td>
+          <td>{{produsen.alamat}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
