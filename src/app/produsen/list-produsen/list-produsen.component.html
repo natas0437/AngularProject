@@ -11,6 +11,7 @@
           <th scope="col">Nama</th>
           <th scope="col">Kode</th>
           <th scope="col">Alamat</th>
+          <th scope="col">Action</th>
         </tr>
         </thead>
         <tbody>
@@ -19,6 +20,10 @@
           <td>{{produsen.nama}}</td>
           <td>{{produsen.kode}}</td>
           <td>{{produsen.alamat}}</td>
+          <td>
+            <button [routerLink]="['/','produsen','sunting',produsen.id]" class="btn btn-sm btn-succes">Sunting</button>
+            <button (click)="hapus(produsen.id)" class="btn btn-sm btn-danger">Hapus</button>
+          </td>
         </tr>
         </tbody>
       </table>

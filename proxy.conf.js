@@ -3,7 +3,7 @@ const PROXY_CONFIG = [
         context: [
             "/api"
         ],
-        target: "https://bootcamp-bni-backend.herokuapp.com",
+        target: "http://localhost:9090",
         secure: false,
         changeOrigin: true,
     }

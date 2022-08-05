@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'tambah',
     component: FormProdusenComponent
+  },
+  {
+    path: 'sunting/:id',
+    component : FormProdusenComponent
   }
 ];
 

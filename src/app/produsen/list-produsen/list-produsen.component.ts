@@ -33,4 +33,14 @@ export class ListProdusenComponent implements OnInit {
     })
   }
 
+  hapus(id: number) {
+    this._produsenService.delete(id).subscribe(response => {
+      if (response.status === 200) {
+        console.log(response.body);
+        this.getListProdusen();
+      } else {
+        console.log(response.body);
+      }
+    })
+  }
 }

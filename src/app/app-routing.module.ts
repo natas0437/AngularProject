@@ -1,31 +1,36 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { ParentComponent } from './communication/parent/parent.component';
-import { CountComponent } from './count/count.component';
-import { ProdusenModule } from './produsen/produsen.module';
-import { ProfileComponent } from './profile/profile.component';
-import { ValidationComponent } from './validation/validation.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {ProfileComponent} from "./profile/profile.component";
+import {CountComponent} from "./count/count.component";
+import {ValidationComponent} from "./validation/validation.component";
+import {ParentComponent} from "./communication/parent/parent.component";
+import {ProdusenModule} from "./produsen/produsen.module";
+import { ProdukModule } from './product/product.module';
 
 const routes: Routes = [
   {
-    path: 'profile',
-    component: ProfileComponent
+  path: 'profile',
+  component: ProfileComponent
   },
   {
     path: 'count',
     component: CountComponent
   },
   {
-    path : 'validation',
-    component : ValidationComponent
+    path: 'validation',
+    component: ValidationComponent
   },
   {
-    path : 'communication',
-    component : ParentComponent
+    path: 'communication',
+    component: ParentComponent
   },
   {
     path: 'produsen',
     loadChildren: () => ProdusenModule
+  },
+  {
+    path: 'produk',
+    loadChildren: () => ProdukModule
   }
 ];
 
@@ -33,4 +38,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
