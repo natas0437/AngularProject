@@ -1,8 +1,0 @@
-.btn {
-    background-image: linear-gradient(to right, #7a1b92 0%, rgb(173, 180, 195) 90%);
-}
-.text-center{
-    background: -webkit-linear-gradient(#7a1b92, rgb(173, 180, 195));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}

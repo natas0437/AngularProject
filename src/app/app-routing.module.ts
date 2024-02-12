@@ -1,41 +1,96 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {ProfileComponent} from "./profile/profile.component";
-import {CountComponent} from "./count/count.component";
-import {ValidationComponent} from "./validation/validation.component";
-import {ParentComponent} from "./communication/parent/parent.component";
-import {ProdusenModule} from "./produsen/produsen.module";
-import { ProdukModule } from './product/product.module';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
+import { DefaultLayoutComponent } from './containers';
+import { Page404Component } from './views/pages/page404/page404.component';
+import { Page500Component } from './views/pages/page500/page500.component';
+import {LoginComponent} from "./pages/auth/login/login.component";
+import {RegisterComponent} from "./pages/auth/register/register.component";
+import {LandingPageComponent} from "./pages/landing-page/landing-page.component";
+import { PortofolioModule } from './pages/portofolio/portofolio.module';
 
 const routes: Routes = [
   {
-  path: 'profile',
-  component: ProfileComponent
+    path: '',
+    component: LandingPageComponent,
+    data: {
+      title: 'Landing Page'
+    }
   },
   {
-    path: 'count',
-    component: CountComponent
+    path: '',
+    component: DefaultLayoutComponent,
+    data: {
+      title: 'Home'
+    },
+    children: [
+      {
+        path: 'dashboard',
+        loadChildren: () =>
+          import('./views/dashboard/dashboard.module').then((m) => m.DashboardModule)
+      },
+      {
+        path: 'example',
+        loadChildren: () =>
+          import('./pages/example/example.module').then((m) => m.ExampleModule)
+      },
+      {
+        path: 'portofolio',
+        loadChildren: () =>
+          import('./pages/portofolio/portofolio.module').then((m) => m.PortofolioModule)
+      },
+      {
+        path: 'portofolio-trainer',
+        loadChildren: () =>
+          import('./pages/portofolio-trainer/portofolio-trainer.module').then((m) => m.PortofolioTrainerModule)
+      },
+      {
+        path: 'pages',
+        loadChildren: () =>
+          import('./views/pages/pages.module').then((m) => m.PagesModule)
+      },
+    ]
   },
   {
-    path: 'validation',
-    component: ValidationComponent
+    path: 'login',
+    component: LoginComponent,
+    data: {
+      title: 'Login Page'
+    }
   },
   {
-    path: 'communication',
-    component: ParentComponent
+    path: 'register',
+    component: RegisterComponent,
+    data: {
+      title: 'Register Page'
+    }
   },
   {
-    path: 'produsen',
-    loadChildren: () => ProdusenModule
+    path: '404',
+    component: Page404Component,
+    data: {
+      title: 'Page 404'
+    }
   },
   {
-    path: 'produk',
-    loadChildren: () => ProdukModule
-  }
+    path: '500',
+    component: Page500Component,
+    data: {
+      title: 'Page 500'
+    }
+  },
+  {path: '**', redirectTo: 'dashboard'}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'top',
+      anchorScrolling: 'enabled',
+      initialNavigation: 'enabledBlocking'
+      // relativeLinkResolution: 'legacy'
+    })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

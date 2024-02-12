@@ -1,0 +1,238 @@
+<div class="container-xl px-4 mt-4">
+    <!-- Account page navigation-->
+    <nav class="navbar navbar-expand-lg " style="background-color: #54BAB9;" shadow-sm>
+        <div class="container">
+          <a class="navbar-brand" href="#">crowdWeb</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">@user161527</a>
+              </li>
+             
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <hr class="mt-0 mb-4">
+    <div class="row">
+        <div class="col-xl-4">
+            <!-- Profile picture card-->
+            <div class="card mb-4 mb-xl-0">
+                <div class="card-header">Profile Picture</div>
+                <div class="card-body text-center">
+                    <!-- Profile picture image-->
+                    <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                    <div class="fs-4">Helo, Clarissa!</div>
+
+                    <div class="large font-italic text-muted mb-4">Trainer at Crowd Academy</div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-8">
+            <!-- Account details card-->
+            <div class="card mb-4">
+                <div class="card-header">Account Details</div>
+                <div class="card-body">
+                    <form>
+                        <!-- Form Group (username)-->
+                        <div class="row gx-3 mb-3">
+                          <!-- Form Group (first name)-->
+                          <div class="col-md-6">
+                              <label class="small mb-1" for="inputFirstName">First name</label>
+                              <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="Clarissa">
+                          </div>
+                          <!-- Form Group (last name)-->
+                          <div class="col-md-6">
+                              <label class="small mb-1" for="inputLastName">Last name</label>
+                              <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" value="Hayati">
+                          </div>
+                      </div>
+                      <div class="row gx-3 mb-3">
+                        <div class="col-md-6">
+                            <label class="small mb-1" for="inputUniversity">University</label>
+                            <input class="form-control" id="inputUniversity" type="text" placeholder="Enter your university" value="Telkom University">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="small mb-1" for="inputJob">Jobs</label>
+                            <input class="form-control" id="inputJob" type="text" placeholder="Enter your job" value="Mahasiswa">
+                        </div>
+                      </div>
+                      <div class="row gx-3 mb-3">
+                        <div class="col-md-6">
+                            <label class="small mb-1" for="inputEmail">Email</label>
+                            <input class="form-control" id="inputEmail" type="email" placeholder="Enter your email address" value="clarissahyati@gmail.com">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="small mb-1" for="inputPhone">Phone</label>
+                            <input class="form-control" id="inputPhone" type="number" placeholder="Enter your phone number" value="081200129977">
+                        </div>
+                      </div>
+                      <div class="row gx-3 mb-3">
+                        <div class="col-md-6">
+                            <label class="small mb-1" for="inputSkills">Skills</label>
+                            <input class="form-control" id="inputSkills" type="text" placeholder="Enter your skills" value="">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="small mb-1" for="inputCategory">Category</label>
+                            <select class="form-select" formControlName='category'>
+                              <option selected>Category</option>
+                              <option>...</option>
+                            </select>
+                        </div>
+                      </div>
+                      <div class="row gx-3 mb-3">
+                        <div class="col-md-6">
+                          <label class="small mb-1" for="inputCategory">Education</label>
+                          <select class="form-select" formControlName='education'>
+                            <option selected>Education</option>
+                            <option>...</option>
+                          </select>
+                      </div>
+                        <div class="col-md-6">
+                            <label class="small mb-1" for="inputAbout">About</label>
+                            <input class="form-control" id="inputAbout" type="text" placeholder="" value="">
+                        </div>
+                      </div>                        
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="card p-3 mt-3">
+          <div class="card-header">
+            My Knowledge
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end" [routerLink]="['/','portofolio-trainer','add_knowlegde_trainer']">
+        <button class="btn btn-success text-white m-1">
+          <svg [cIcon]="icons.cilPlus" size="l" title="Plus Icon"></svg>
+        </button>
+      </div>
+        <table class="table caption-top">
+          <thead>
+            <tr>
+              <th scope="col md-6"></th>
+              <th scope="col md-6"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Data Analys</td>
+              <td>
+                
+              </td>
+            </tr>
+            <tr>
+              <td>Digital Marketing</td>
+              <td>
+                
+              </td>
+            </tr>
+          </tbody>
+        </table>
+          </div>
+
+
+          <div class="card p-3 mt-3">
+            <div class="card-header">
+              Projects
+          </div>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end" [routerLink]="['/','portofolio-trainer','add_project_trainer']">
+          <button class="btn btn-success text-white m-1">
+            <svg [cIcon]="icons.cilPlus" size="l" title="Plus Icon"></svg>
+          </button>
+        </div>
+          <table class="table caption-top">
+            <thead>
+              <tr>
+                <th scope="col md-6"></th>
+                <th scope="col md-6"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Data Analys</td>
+                <td>
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                  <button class="btn btn-sm btn-success text-white  m-1" [routerLink]="['/','portofolio-trainer','update_project_trainer']">
+                    <svg [cIcon]="icons.cilList" size="l" title="List Icon"></svg>
+                  </button>
+                  <button class="btn btn-sm  btn-danger text-white m-1">
+                    <svg [cIcon]="icons.cilTrash" size="l" title="Trash Icon"></svg>
+                  </button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Data Analys</td>
+                <td>
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end" [routerLink]="['/','portofolio-trainer','update_project_trainer']">
+                  <button class="btn btn-sm btn-success text-white  m-1">
+                    <svg [cIcon]="icons.cilList" size="l" title="List Icon"></svg>
+                  </button>
+                  <button class="btn btn-sm  btn-danger text-white m-1">
+                    <svg [cIcon]="icons.cilTrash" size="l" title="Trash Icon"></svg>
+                  </button>
+                </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+            </div>
+            <div class="card p-3 mt-3">
+              <div class="card-header">
+                Experiences
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end" [routerLink]="['/','portofolio-trainer','add_experiences_trainer']">
+            <button class="btn btn-success text-white m-1">
+              <svg [cIcon]="icons.cilPlus" size="l" title="Plus Icon"></svg>
+            </button>
+          </div>
+            <table class="table caption-top">
+              <thead>
+                <tr>
+                  <th scope="col md-6"></th>
+                  <th scope="col md-6"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Manajement Accountant</td>
+                  <td>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end" >
+                    <button class="btn btn-sm btn-success text-white  m-1" [routerLink]="['/','portofolio-trainer','update_experiences_trainer']">
+                      <svg [cIcon]="icons.cilList" size="l" title="List Icon"></svg>
+                    </button>
+                    <button class="btn btn-sm  btn-danger text-white m-1">
+                      <svg [cIcon]="icons.cilTrash" size="l" title="Trash Icon"></svg>
+                    </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Manajement Accountant</td>
+                  <td>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button class="btn btn-sm btn-success text-white  m-1" [routerLink]="['/','portofolio-trainer','update_experiences_trainer']">
+                      <svg [cIcon]="icons.cilList" size="l" title="List Icon"></svg>
+                    </button>
+                    <button class="btn btn-sm  btn-danger text-white m-1">
+                      <svg [cIcon]="icons.cilTrash" size="l" title="Trash Icon"></svg>
+                    </button>
+                  </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+              </div>
+              <button  type="button" class="btn btn-secondary" onclick="window.print()">Download</button>
+              
+  </div>
